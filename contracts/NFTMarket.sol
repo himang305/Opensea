@@ -59,7 +59,7 @@ contract NFTMarket is ReentrancyGuard {
     function createMarketItem(
         address nftContract,
         uint256 tokenId,
-        uint256 price) public payable nonReentrant{
+        uint256 price ) public payable nonReentrant{
          require(price > 0, "Price must be above zero");
          require(msg.value == listingPrice, "Price must be equal to listing price");
 
@@ -149,7 +149,6 @@ contract NFTMarket is ReentrancyGuard {
 
             uint itemCount = 0;
             uint currentIndex = 0;
-
 
             for(uint i = 0; i < totalItemCount; i++){
                 //get only the items that this user has bought/is the owner
